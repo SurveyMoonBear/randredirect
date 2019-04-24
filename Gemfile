@@ -12,6 +12,9 @@ gem 'econfig', '~> 2.1'
 gem 'puma', '~> 3.12', '>= 3.12.1'
 gem 'roda', '~> 3.19'
 
+# Services
+gem 'dry-transaction'
+
 # INFRASTRUCTURE LAYER
 # Databased related
 gem 'redis', '~> 4.1'

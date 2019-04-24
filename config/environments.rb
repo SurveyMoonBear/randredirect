@@ -3,7 +3,7 @@
 require 'roda'
 require 'econfig'
 
-module RandomRedirect
+module RandRedirect
   # Environment configuration
   class App < Roda
     plugin :environments
@@ -15,6 +15,7 @@ module RandomRedirect
     configure do
       require 'redis'
       REDIS = Redis.new(url: App.config.REDIS_URL)
+      REDIS.set('counter', 0)
 
       def self.REDIS
         REDIS

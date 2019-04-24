@@ -1,2 +1,2 @@
 require_relative './init.rb'
-run RandomRedirect::App.freeze.app
+run RandRedirect::App.freeze.app
