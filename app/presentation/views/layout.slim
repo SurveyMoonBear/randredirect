@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    title RandomRedirect
+
+    / Bootstap CSS & Theme (Yeti)
+    link {
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/yeti/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-w6tc0TXjTUnYHwVwGgnYyV12wbRoJQo9iMlC2KdkdmVvntGgzT9jvqNEF/uKaF4m"
+      crossorigin="anonymous"
+    }
+
+    / FontAwesome Icons
+    link {
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      rel="stylesheet"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    }
+
+    / Custom CSS
+    == assets(:css)
+
+  body
+    / JQuery
+    script{ 
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"
+      integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" 
+      crossorigin="anonymous" 
+    }
+
+    / Popper
+    script{ 
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
+      integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
+      crossorigin="anonymous" 
+    }
+
+    / Bootstrap JS
+    script{
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"
+    }
+
+    / / AnimateJS
+    / link {
+    /   href="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"
+    /   integrity="sha384-BnFYVbw3PHhz5qWXTCSL12MjPc3KxjdKPx7R4R5JjIzxFmYX267NDyJ9B/nZANdg"
+    /   crossorigin="anonymous"
+    / }
+
+    .container id='html_body'
+      section
+        == yield
