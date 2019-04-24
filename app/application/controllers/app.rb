@@ -14,12 +14,14 @@ module RandRedirect
       routing.assets
 
       config = App.config
+      redirect_urls = File.exists?("./config/app.yml") ? config.REDIRECT_URLS : 
+                                                         JSON.parse(config.REDIRECT_URLS)
 
       # GET /
       routing.root do
         visitor_num = App.REDIS.get('counter').to_i
 
-        res = Service::AssignRedirectUrl.new.call(redirect_urls: config.redirect_urls, 
+        res = Service::AssignRedirectUrl.new.call(redirect_urls: redirect_urls,
                                                   num: visitor_num)
         if res.success?
           redirect_url = res.value!
