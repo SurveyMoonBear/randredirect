@@ -4,7 +4,7 @@ require 'rake/testtask'
 
 desc 'Run application'
 task :run do
-  sh 'rackup -p 9292'
+  sh 'heroku local -p 9292'
 end
 
 desc 'Run application console (pry)'

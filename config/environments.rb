@@ -2,7 +2,6 @@
 
 require 'roda'
 require 'econfig'
-require 'redis'
 
 module RandomRedirect
   # Environment configuration
@@ -13,7 +12,13 @@ module RandomRedirect
     Econfig.env = environment.to_s
     Econfig.root = '.'
 
-    redis = Redis.new(url: ENV['REDIS_URL'])
-    binding.pry
+    configure do
+      require 'redis'
+      REDIS = Redis.new(url: App.config.REDIS_URL)
+
+      def self.REDIS
+        REDIS
+      end
+    end
   end
 end
